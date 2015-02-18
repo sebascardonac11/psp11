@@ -71,31 +71,22 @@ public class App extends HttpServlet {
         // Y= 186.0-699.0-132.0-272.0-291.0-331.0-199.0-1890.0-788.0-1601.0
         //Scanner input = new Scanner(System.in);
         String lst1 = req.getParameter("lst1");
-        String lst2 = req.getParameter("lst2");
-
-        String Yk = req.getParameter("yk");
-        
         Double nextElement = 0D;
-
         LinkedList<Double> x = new LinkedList<Double>();
-        LinkedList<Double> y = new LinkedList<Double>();
-
         // StatisticCalculator calculator = new StatisticCalculator();
         String[] strElements1 = lst1.split("-");
-        String[] strElements2 = lst2.split("-");
+     
         for (int i = 0; i < strElements1.length; i++) {
             try {
                 nextElement = Double.valueOf(strElements1[i]);
                 x.add(nextElement);
-                nextElement = Double.valueOf(strElements2[i]);
-                y.add(nextElement);
+
             } catch (NumberFormatException ex) {
                 MainView.error(req, resp);
             }
         }
-        nextElement = Double.valueOf(Yk);
+    
         Calculos cal = new Calculos(x);
-        //calculator.setInputData(numbersList);
         MainView.showResults(req, resp, cal.getVS(),cal.getS(),cal.getM(),cal.getL(),cal.getVL());
     }
 
