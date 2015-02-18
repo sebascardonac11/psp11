@@ -1,6 +1,6 @@
 package vista;
 
-import controller.Calculos;
+import model.Calculos;
 import java.util.LinkedList;
 
 /**

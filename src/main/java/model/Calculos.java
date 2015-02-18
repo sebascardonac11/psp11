@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller;
+package model;
 
 import java.util.LinkedList;
 
@@ -33,7 +33,7 @@ public class Calculos {
         }
         this.avgLnX = this.avgLnX / this.x.size();
     
-
+///Users/sebascardonac11/NetBeansProjects/placebopsp11/psp11/src/main/java/controller/Calculos.java
         for (Double dataI1 : this.x) {
             Double lnX=Math.log(dataI1);
             this.varianza += Math.pow((lnX - this.avgLnX ), 2);
